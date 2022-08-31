@@ -1,5 +1,7 @@
 # ansible-role-docker-compose-generator
 
+**patch/output-path** - This patch uses the `docker_compose_generator_output_path` as the location and name of the docker-compose file, meant for generating `docker-compose.override.yaml` files. This patch is not considered safe, as it does not check that the path exists before attempting to create the file.
+
 Pass this role a hash and it will generate a docker-compose.yml file. The following structure is supported and is designed to be passed to the role using `group_vars`.
 
 Rendered files are output to the `output` directory.
