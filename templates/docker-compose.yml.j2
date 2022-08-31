@@ -5,7 +5,9 @@ services:
 {% for container in containers %}
 {% if container.active %}
   {{ container.service_name }}:
+{% if container.image is defined %}
     image: {{ container.image }}
+{% endif %}
     container_name: {{ container.container_name | default(container.service_name) }}
 {% if container.extra_hosts is defined %}
     extra_hosts:
