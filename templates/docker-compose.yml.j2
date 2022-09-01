@@ -23,9 +23,6 @@ services:
 {% if container.build is defined %}
     build: {{ container.build }}
 {% endif %}
-{% if container.user is defined %}
-	user: {{ container.user }}
-{$ endif %}
 {% if container.privileged is defined %}
     privileged: {{ container.privileged }}
 {% endif %}
@@ -91,14 +88,7 @@ services:
     mem_limit: {{ container.mem_limit }}
 {% endif %}
 {% if container.command is defined %}
-{% if container.command is string %}
     command: {{ container.command }}
-{% else %}
-    command:
-{% for command in container.command %}
-      - {{ command }}
-{% endfor %}
-{% endif %}
 {% endif %}
 {% if container.security_opt is defined %}
     security_opt:
