@@ -1,0 +1,9 @@
+---
+containers:
+  - name: apache2
+    active: true
+    image: ubuntu/apache2:2.4-22.04_beta
+    ports:
+      - 80:80
+    environment:
+      - TZ=UTC
