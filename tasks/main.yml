@@ -12,3 +12,4 @@
     owner: "{{ docker_compose_generator_uid }}"
     group: "{{ docker_compose_generator_gid }}"
     mode: 0644
+  notify: Docker compose up
