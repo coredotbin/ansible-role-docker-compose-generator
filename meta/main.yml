@@ -45,7 +45,4 @@ galaxy_info:
     - name: Debian
       versions:
         - all
-categories:
-  - system
-  - web
 dependencies: []
