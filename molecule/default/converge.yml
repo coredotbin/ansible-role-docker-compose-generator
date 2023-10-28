@@ -15,7 +15,6 @@
           - TZ=UTC
 
   roles:
-    - role: coredotbin.docker
     - role: ../../../ansible-role-docker-compose-generator
 
   # tasks:
