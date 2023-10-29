@@ -73,16 +73,24 @@ services:
 {% endfor %}
 {% endif %}
 {% if container.labels is defined %}
+{% if container.labels is none %}
+    labels: []
+{% else %}
     labels:
 {% for label in container.labels %}
       - {{ label }}
 {% endfor %}
 {% endif %}
+{% endif %}
 {% if container.ports is defined %}
+{% if container.ports is none %}
+    ports: []
+{% else %}
     ports:
 {% for port in container.ports %}
       - {{ port }}
 {% endfor %}
+{% endif %}
 {% endif %}
 {% if ( container.environment is defined ) or ( container.include_global_env_vars is defined and container.include_global_env_vars) %}
     environment:
