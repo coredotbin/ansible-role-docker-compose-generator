@@ -101,7 +101,7 @@ services:
     depends_on:
 {% for dependent in container.depends_on %}
 {% if dependent is mapping %}
-      {{ dependent }}:
+      {{ dependent.service}}:
         condition: {{ dependent.condition }}
 {% else %}
       - {{ dependent }}
